@@ -93,6 +93,15 @@ cd SETUP/
 
 Nous venons d'installé l'environnement d'exécution universelle (URE) y compris ces composants. Maintenant passons à l'installation de notre système de gestion de base des données BombaDB.
 
+Vous avez le choix maintenant entre la version Classique ou Standard de BombaDB suivante :
+![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Classique200.png)
+# BOMBADB EDITION CLASSIQUE (1.0.0)
+Utiliser BombaDB la version classique (traditionnelle) offerte pour les données des petits volumes et de disposer d’un volume important de données afin d’accéder rapidement et fréquemment à vos données.
+
+![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/standard200.png)
+# BOMBADB EDITION STANDARD (1.0.0)
+Combiner les deux versions traditionnelle et version de traitement ou sauvegarde en mémoire pour un traitement des données accéléré, une nouvelle orientation pour vos systèmes grâce à des applications novatrices et d'une plus grande adaptabilité.
+
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Installation.png)
 # INSTALLATION
 Ce guide d'installation du dit système de gestion de base des données requiert un environnement LINUX, MAC OS ou WINDOWS depuis l’interface SHELL. Alors vous avez le choix d’installation parmi les différentes plateformes proposées et d’en choisir celle qui vous convienne la plus facile. Assurez-vous que votre connexion internet marche successivement afin de procéder à l’installation. Et dans cet exemple nous allons procéder à l’installation de la version classique. Vous pouvez changer la version d’édition selon vos besoins.
