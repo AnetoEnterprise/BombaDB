@@ -38,3 +38,57 @@ cd SETUP/
 ./install.sh
 
 ```
+
+Sous WINDOWS, en utilisant CYGWIN tapez la commande :
+```shell
+wget https://sourceforge.net/projects/ure/files/1.2/CYGWIN/ure-1.2.tar.xz
+
+tar -xvf ure-1.2.tar.xz
+
+cd ./SETUP/
+
+./install.sh
+
+rm -r ../SETUP
+
+
+
+wget https://sourceforge.net/projects/ure/files/1.2/AllModulesLangs/CYGWIN/URE-Libs-Langs-1.0-0.x86_64.tar.xz
+
+tar -xvf URE-Libs-Langs-1.0-0.x86_64.tar.xz
+
+cd SETUP/
+
+./install.sh
+
+```
+
+Pour NodeJS, tapez la commande  :
+```shell
+npm i ure_mod_linux all_langs_linux all_test_syntaxes
+```
+Sous MACOS, tapez la commande :
+```shell
+wget https://sourceforge.net/projects/ure/files/1.2/MACOS/ure-1.2.tar.xz
+
+tar -xvf ure-1.2.tar.xz
+
+cd ./SETUP/
+
+./install.sh
+
+rm -r ../SETUP
+
+
+
+wget https://sourceforge.net/projects/ure/files/1.2/AllModulesLangs/MACOS/URE-Libs-Langs-1.0-0.x86_64.tar.xz
+
+tar -xvf URE-Libs-Langs-1.0-0.x86_64.tar.xz
+
+cd SETUP/
+
+./install.sh
+
+```
+
+Nous venons d'installé l'environnement d'exécution universelle (URE) y compris ces composants. Maintenant passons à l'installation de notre système de gestion de base des données BombaDB.
