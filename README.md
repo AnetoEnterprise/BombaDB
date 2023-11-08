@@ -204,108 +204,40 @@ Une fois la commande est correcte, vous allez voir les informations ci-après ap
 :42:    ->:B1:Désolé, la base des données:A2: :A1::E1::A2: :B1:existe déjà.:A2:
 :43:    ->:B1:Désolé, la table:A2: :A1::E1::A2: :B1:existe déjà.:A2:
 :44:    ->:B1:Désolé, la création de la table:A2: :A1::E1::A2: :B1:impossible.:A2:
-
-
-
 :45:    ->La table :A1::E1::A2: ajoutée correctement via :A1::E2::A2: !
-
-
-
 :46:    ->:B1:Désolé, colonne(s):A2: :A1::E1::A2: :B1:non valide.:A2::EE:
-
-
-
 :47:    ->:B1:Désolé, aucune information trouvée.:A2::EE:
-
-
-
 :48::E1: :A1:Table et:A2: :E2: :A1:Utilisateur(s) supprimé(s) correctement.:A2::EE:
-
-
-
 :49:DONNEES
-
-
-
 :50:Supprimé(s) correctement.
-
-
-
 :51:    ->:B1:Désolé, colonne(s):A2: :A1::E1::A2: :B1:mal définie.:A2::EE:
-
-
-
 :52:    ->:B1:Désolé, la taille limite de la colonne :A2: :A1::E1::A2: :B1: est :A2: :A1::E2::A2::B1:. Elle à était remplacé par la valeur vide.:A2::EE:
-
-
-
 :53:    ->:B1:Désolé, erreur dans la table au format de l'attribut :A2: :A1::E1::A2: :B1: mal définie et remplacé par la valeur vide.:A2::EE:
-
-
-
 :54:    ->:B1:Désolé, la colonne :A2: :A1::E1::A2: :B1: devrait comporter uniquement les chiffres. Elle à était remplacé par la valeur vide.:A2::EE:
-
-
-
 :55:    ->:B1:Désolé, la colonne :A2: :A1::E1::A2: :B1: est mal définie et remplacé par la valeur automatique.:A2::EE:
-
-
-
 :56:    ->:B1:Désolé, la valeur:A2: :A1::E1::A2: :B1: de l'attribut :A2: :A1::E2::A2: :B1:ne corresponde pas.:A2::EE:
-
-
-
 :57::A1:Les informations ont étaient inserées correctement dans la table:A2: :E1::EE:
-
-
-
 :58:    ->:B1:Désolé, les colonnes définies ne sont pas au complet comme définie sur la table :A2: :A1::E1::A2::EE:
-
-
-
 :59:    ->:B1:Désolé, la table :A2: :A1::E1::A2: :B1:inexistante.:A2::EE:
-
-
-
 :60:    ->:B1:Désolé, erreur d'insertion des données dans la table :A2: :A1::E1::A2::EE:
-
-
-
 :61::B1:L'application:A2: :A1::E1::A2: :B1:non trouvée.:A2:
-
-
-
 :62::B1:Le fichier:A2: :A1::E1::A2: :B1:non trouvé et remplacé par la valeur vide.:A2:
-
-
-
 :63::B1:Désolé, le nombre limite dans l'attribut:A2: :A1::E1::A2: :B1:est:A2: :A1::E2::A2: :B1:Vous avez spécifié:A2: :A1::E3::A2: :B1:charactères.:A2:
-
-
-
 :64:    ->:B1:Désolé, aucune information trouvée au terme de la récherche spécifiée :A2: :A1::E1::A2::EE:
-
-
-
 :65:    ->:B1:Désolé, le nombre limite des colonnes est de 5. Veuillez reduire les attributs définis dans :A2: :A1::E1::A2::EE:
-
-
-
 :66:    ->:B1:Lecture impossible de la donne ::A2::EE::A1::E1::A2::EE:
-
-
-
 :67:HEURE
-
-
-
 :68:DATE
-
-
-
 :69:HEURE et DATE
-
-
-
 :70::A1:Mise à jour effectuée !:A2::EE:
 ```
+Comme vous pouvez le voir, depuis la ligne :-1:, BombaDB utilise le répertoire /usr/db/bombadb/ afin de detecter le chemin par défaut d'ou toutes les données vont etre enregistrer. Vous êtes libre de changer le répertoire des données, de modifier la langue par défaut et d'utiliser celle qui est compréhensive pour votre administration, à condition de ne pas modifier le numéro des lignes et des lettres qui sont entre les deux points. Cet exemple de fichier de configuration est strictement basé à la configuration du système de gestion BombaDB et non pour la traduction de vos syntaxes procédurales et sécuritaires.
+
+Pour la meilleure compréhension de ces caractères (balises) entre les deux points :
+ Les caractères numériques qui sont entre les deux points comme par exemple :0: définis le numéro de ligne sur lequel BombaDB détectera la ligne du message à retourner par l’action effectuée, en cas d’échec ou du succès ;
+ Les textes qui sont entre :B1: et se termine par :A2: sont définis pour le renvoi des messages d’erreurs utilisant la couleur rouge depuis l’environnement console (SHELL) ;
+ Et les textes qui débutent avec la balise :A1: et se termine par :A2: affiche effectivement le message du succès en vert ;
+ La balise :E1:, :E2: ou :E3: définis l’emplacement sur lequel le nom ou syntaxes d’échec ou du succès serait placer pour la meilleure compréhension de la réponse de retour après l’action ;
+ Et pour clôturer, la balise :EE: définie le saut de ligne à chaque fin du message renvoyer au SHELL ou via le poste client.
+
+Par exemple, modifions la ligne :69: en français pour l’anglais :
