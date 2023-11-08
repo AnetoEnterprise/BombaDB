@@ -93,6 +93,7 @@ cd SETUP/
 
 Nous venons d'installé l'environnement d'exécution universelle (URE) y compris ces composants. Maintenant passons à l'installation de notre système de gestion de base des données BombaDB.
 
+![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Installation.png)
 # INSTALLATION
 Ce guide d'installation du dit système de gestion de base des données requiert un environnement LINUX, MAC OS ou WINDOWS depuis l’interface SHELL. Alors vous avez le choix d’installation parmi les différentes plateformes proposées et d’en choisir celle qui vous convienne la plus facile. Assurez-vous que votre connexion internet marche successivement afin de procéder à l’installation. Et dans cet exemple nous allons procéder à l’installation de la version classique. Vous pouvez changer la version d’édition selon vos besoins.
 
@@ -133,6 +134,7 @@ cd BOMBADB/
 ```
 Comme vous pouvez le voir, l’installation du système de gestion de base des données (BombaDB) est si simple que ça en a l’air. Passons maintenant à la configuration de notre système téléchargé et installé afin de structurer et faire en sorte qu’il reconnaisse nos nouvelles langues pour l’exécution des taches avenir sécurisées
 
+![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Configuration.png)
 # CONFIGURATION
 Par défaut BombaDB utilise la configuration structurée francophone. Telle est la langue officielle de la République Démocratique du Congo. Tous les messages en cas du succès ou d'échec sont quasiment édités en français. Pour les configurer comme bon vous semble afin de traduire la langue par défaut et d’utiliser celle qui vous convienne, vous devez trouver un fichier lang.conf dans le répertoire précis depuis :
 /usr/share/bombadb/ sous LINUX;
@@ -319,4 +321,4 @@ quitter;
 ```
 A la première ligne de commande depuis le SHELL URE, nous avons pu préciser à l’environnement d’exécution universelle de lire rien que notre fichier des syntaxes et par la suite on exécute nos commandes de teste aisément qui nous renvoi les résultats 
 
-![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Calcule_Classique.png)
+![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Calcul_Classique.png)
