@@ -344,7 +344,7 @@ En parlant de la sécurité, BombaDB occupe 3 facteurs des sécurités :
 Passons maintenant aux choses sérieuses :
 Premièrement nous allons définir dans notre fichier des syntaxes la procédure sur laquelle nous permettra de créer une ou plusieurs bases des données en cas utile. Comme nous avons déjà notre fichier mes_syntaxes.txt, ajoutons-le la ligne des syntaxes suivante :
 
-1. CRÉATION DE LA BASE DES DONNÉES :
+# 1. CRÉATION DE LA BASE DES DONNÉES :
 Syntaxes francophones :
 ```shell
 créer base des données=`?`
@@ -405,8 +405,83 @@ utilisateur=`root`
 mot de passe=`12345`
 
 type des données=`0`;
+```
 
+Vous savez maintenant comment traduire les syntaxes de notre langage procédural (PL/URE). Avançons maintenant pour l’ajout d’un ou plusieurs utilisateur(s) dans notre nouvelle base des données crée.
 
+# 2. AJOUT D’UTILISATEUR DANS LA BASE DES DONNÉES :
+Ajoutons la ligne suivante dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+ajout utilisateur=`?`
+
+mot de passe=`?`
+
+comme syntaxes=`?`
+
+utilisateur existant=`?`
+
+mot de passe existant=`?`
+
+dans la base des données=`?`
+
+(bomba_add_userdb);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante :
+```shell
+:s:mes_syntaxes.ure;
+
+ajout utilisateur=`user2`
+
+mot de passe=`1234`
+
+comme syntaxes=`quitter (bomba_exit)#afficher '?' (bomba_print)#calculer ?+? (bomba_math)#`
+
+utilisateur existant=`root`
+
+mot de passe existant=`12345`
+
+dans la base des données=`testdb`;
+```
+
+Examinons un peu la ligne 4 en ciblant l’attribut syntaxes. On voie clairement que nous avons pu définir quelques syntaxes sur lesquelles notre nouveau invité utilisateur, dénommé user2, utilisera comme procédures correctes afin de sécurisé les informations structurées dans la base des données. Qui veut dire qu’il n’est pas autorisé à exécuter d’autres procédures que celles spécifiées dans son compte automatiquement. Autrement nous pouvons dire que c’est la seule manière que BombaDB gère les droits d’accès aux sous utilisateurs de la base des données tant qu’à la création de la base des données, un administrateur primordial à était déjà ajouté utilisant le nom : root et comme mot de passe : 12345.
+Pour clarifier, notre sous utilisateur exécutera que les procédures :
+```shell
+quitter (bomba_exit);
+
+afficher '?' (bomba_print);
+
+calculer ?+? (bomba_math);
+```
+
+Vous vous poser des questions concernant les symboles # ?
+Tant que dans nos syntaxes principales nous utilisons déjà les points virgules, alors pour le sous utilisateur, ses syntaxes dans la base des données devraient être structurées et finir par #. A son exécution avenir, l’environnement d’exécution universelle remplacera le Diez (#) contenu dans la base des données par le point-virgule (;) saisi par le sous utilisateur automatiquement afin que les procédures exécutées fonctionnent correctement.
+
+# 3. LISTAGE DES UTILISATEURS DANS LA BASE DES DONNÉES :
+Ajoutons la ligne suivante dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+lister les utilisateurs=`?`
+
+utilisateur existant=`?`
+
+mot de passe existant=`?`
+
+dans la base des données=`?`
+
+(bomba_list_userdb);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante :
+```shell
+:s:mes_syntaxes.ure;
+
+lister les utilisateurs=`*.*`
+
+utilisateur existant=`root`
+
+mot de passe existant=`12345`
+
+dans la base des données=`testdb`;
 ```
 
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Connecteur.png)
