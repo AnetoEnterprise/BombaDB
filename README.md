@@ -1179,7 +1179,23 @@ console.log();
 ```
 Intégrer BombaDB en utilisant PHP :
 Premièrement vous devez l'activer depuis votre fichier php.ini comme suite :
-```php
+```shell
 nano /etc/php/7.2/cli/php.ini
 extension=php_bdblocal.so
 ```
+
+Et par la suite appeler cette commande dans votre fichier test.php :
+```php
+<?php
+echo 'bombaDBModule_Exec("calculer 2+2", "*.*");'
+?>
+```
+Intégrer BombaDB en utilisant PYTHON pour :
+```python
+#!/usr/bin/env python
+
+import pybdblocal
+message=pybdblocal.bombaDBModule_Exec("calculer 2+2", "*.*")
+print(message)
+```
+Nous sommes arrivé à la fin de l’intégration BombaDB connecteur et espérant que ce petit manuel va vous familiariser correctement. Si vous n’avez pas encore installé BombaDB, vous pouvez cliquer sur Guide d’installation et configuration afin de bien procéder.
