@@ -94,6 +94,7 @@ cd SETUP/
 Nous venons d'installé l'environnement d'exécution universelle (URE) y compris ces composants. Maintenant passons à l'installation de notre système de gestion de base des données BombaDB.
 
 Vous avez le choix maintenant entre la version Classique ou Standard de BombaDB suivante :
+
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Classique200.png)
 # BOMBADB EDITION CLASSIQUE (1.0.0)
 Utiliser BombaDB la version classique (traditionnelle) offerte pour les données des petits volumes et de disposer d’un volume important de données afin d’accéder rapidement et fréquemment à vos données.
@@ -1075,4 +1076,68 @@ Maintenant que vous savez comment installer, configurer et gérer vos données g
 Avant de lister ou procéder aux différents langages des programmations qui permettent l’intégration de BombaDB à vos systèmes qu’utilisent les langages des programmations existants, BombaDB propose deux bibliothèques dynamiques, l’une pour le serveur et l’autre pour le client (Shell BDB) afin de bien gérer vos informations correctement sans pour au tant passer à l’interface console de l’environnement d’exécution universelle (EEU ou URE), mais d’utiliser effectivement le shell BombaDB pour l’affichage des informations sous forme d’un tableau au lieu de les afficher au format JSON comme depuis la console URE.
 
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/ListageDB.png)
+
+Pour procéder à l'installation de la version archive (XZ) :
+Sous LINUX, tapez la commande :
+```shell
+sudo wget https://download.bombadb.tech/LINUX/BombaDB-server-1.0-0.x86_64.tar.xz
+tar -xvf BombaDB-server-1.0-0.x86_64.tar.xz
+cd SERVER-CLIENT/
+./install.sh
+rm -r ../SETUP
+```
+
+Pour ceux qui veulent adapter BombaDB aux langages de programmation existants, peuvent interagir complètement grâce aux APIs proposés aux différents langages de programmations ci-après utilisants les bibliothèques dynamiques BombaDB :
+
+Avant de procéder, vous devez d’abord télécharger et installer les bibliothèques partagées BombaDB comme suite :
+Sous LINUX, tapez la commande :
+```shell
+sudo wget https://download.bombadb.tech/LIBS/LINUX/BombaDB-libs-1.0-0.x86_64.tar.xz
+tar -xvf BombaDB-libs-1.0-0.x86_64.tar.xz
+cd LIBS/
+./install.sh
+rm -r ../SETUP
+```
+
+Sous CYGWIN (WINDOWS), tapez la commande :
+```shell
+wget https://download.bombadb.tech/LIBS/CYGWIN/BombaDB-libs-1.0-0.x86_64.tar.xz
+tar -xvf BombaDB-libs-1.0-0.x86_64.tar.xz
+cd LIBS/
+./install.sh
+rm -r ../SETUP
+```
+
+Sous MAC OS, tapez la commande :
+```shell
+wget https://download.bombadb.tech/LIBS/MACOS/BombaDB-libs-1.0-0.x86_64.tar.xz
+tar -xvf BombaDB-libs-1.0-0.x86_64.tar.xz
+cd LIBS/
+./install.sh
+rm -r ../SETUP
+```
+
+Une fois nos bibliothèques installées, vous pouvez aisément les intégrer à vos systèmes ou même vos serveurs TCP/IP existants si vous ne voulez pas utiliser celui proposé par BombaDB.
+
+Intégrer BombaDB en utilisant C++ :
+```c++
+#include "bombadb.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main(int argc, char** argv)	{
+string resultat="";
+resultat=bombaDBModule_Exec("calculer 2+2;", "*.*");
+cout << resultat << "\n";
+
+return EXIT_SUCCESS;
+}
+```
+
 
