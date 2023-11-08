@@ -746,6 +746,112 @@ utiliser le mot de passe=`12345`
 dans la base des données=`testdb`;
 ```
 
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+inserer dans la table=`test_table`
+
+colonnes=`ID:a(),NOM:Aneto,POSTNOM:Minanga,PRENOM:Guyllit,TEL:0842666616,DETAILS:Test d'insertion des informations.,DATE:d(),HEURE:t(),MOTDEPASSE:monApplication.exe>0000,FICHIER:monfichier.txt`;
+```
+
+# 11. SELECTION DES DONNÉES DANS LA TABLE :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+selectionner dans la table=`?`
+
+colonnes=`?`
+
+d'ou=`?`
+
+(bomba_select);
+
+
+
+selectionner dans la table=`?`
+
+colonnes=`?`
+
+d'ou=`?`
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_select);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+selectionner dans la table=`test_table`
+
+colonnes=`ID,NOM,POSTNOM,PRENOM,HEURE` d'ou=`NOM:Aneto`
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+selectionner dans la table=`test_table`
+
+colonnes=`*.*`
+
+d'ou=`NOM:Aneto`;
+```
+
+# 12. MISE À JOUR DES INFORMATIONS EXISTANTES :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+modifier dans la table=`?`
+
+mettre à jour=`?`
+
+d'ou=`?`
+
+(bomba_update_data);
+
+
+
+modifier dans la table=`?`
+
+mettre à jour=`?`
+
+d'ou=`?`
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_update_data);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+modifier dans la table=`test_table`
+
+mettre à jour=`POSTNOM:Toto`
+
+d'ou=`ID:3`
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
+
+
 
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Connecteur.png)
 # CONNECTEUR
