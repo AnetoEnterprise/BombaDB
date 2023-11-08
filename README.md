@@ -306,3 +306,14 @@ Exécuter la commande suivante :
 ```shell
 ure -e "mes_syntaxes.txt" ".ure"
 ```
+
+Par la suite, copier le fichier des syntaxes au répertoire /usr/share/ure/int/ :
+```shell
+cp -r ./mes_syntaxes.txt /usr/share/ure/int/
+```
+On voie clairement que nous avons pu définir l’extension .ure pour notre fichier de syntaxes sécurisé et accessible qu’a nous seul. Essayons maintenant nos syntaxes afin de savoir qu’elles fonctionnent correctement :
+```ure
+:s:mes_syntaxes.ure;
+calculer 2+3;
+quitter;
+```
