@@ -1000,7 +1000,70 @@ utiliser le mot de passe=`12345`
 dans la base des données=`testdb`;
 ```
 
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+afficher la date actuelle();
+```
+
+Vous pouvez aussi définir le format h:m:s comme suite :
+```shell
+afficher la date actuelle(`jj/mm/yyyy`);
+```
+
+# 16. AFFICHAGE DE L'HEURE ET LA DATE ACTUELLE :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+maintenant()
+
+(bomba_now);
+
+
+
+maintenant()
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_now);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+maintenant(`h:m:s-jj/mm/yyyy`)
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+maintenant();
+```
+
+Vous pouvez aussi définir le format h:m:s comme suite :
+```shell
+maintenant(`h:m:s-jj/mm/yyyy`);
+```
+
+Nous sommes arrivés à la fin des syntaxes (procédures) pour l’Edition classique. Pour ceux qui veulent approfondir les procédures avancées de BombaDB, prière d’utiliser la version de l’édition Standard ou Entreprise. Passons maintenant à la rubrique GUIDE DES CONNECTEURS afin de voir comment intégrer ou utiliser BombaDB avec d’autres langages des programmations existants.
+
+Vous pouvez télécharger les syntaxes complètes BombaDB édition classique sur le fichier mes_syntaxes et déjà prêtes à l’emploi.
+
+
 
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Connecteur.png)
 # CONNECTEUR
-Guide rélatif aux connecteurs pour l'utilisation de BombaDB à d'autres langage de programmation.
+Maintenant que vous savez comment installer, configurer et gérer vos données grâce au langage de programmation universel PL/URE, en même temps fréquentiel. BombaDB vous propose les différents connecteurs sur lequel vous allez l'adapter à vos système informatique.
+
+Avant de lister ou procéder aux différents langages des programmations qui permettent l’intégration de BombaDB à vos systèmes qu’utilisent les langages des programmations existants, BombaDB propose deux bibliothèques dynamiques, l’une pour le serveur et l’autre pour le client (Shell BDB) afin de bien gérer vos informations correctement sans pour au tant passer à l’interface console de l’environnement d’exécution universelle (EEU ou URE), mais d’utiliser effectivement le shell BombaDB pour l’affichage des informations sous forme d’un tableau au lieu de les afficher au format JSON comme depuis la console URE.
+
+![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/ListageDB.png)
+
