@@ -231,13 +231,47 @@ Une fois la commande est correcte, vous allez voir les informations ci-après ap
 :69:HEURE et DATE
 :70::A1:Mise à jour effectuée !:A2::EE:
 ```
-Comme vous pouvez le voir, depuis la ligne :-1:, BombaDB utilise le répertoire /usr/db/bombadb/ afin de detecter le chemin par défaut d'ou toutes les données vont etre enregistrer. Vous êtes libre de changer le répertoire des données, de modifier la langue par défaut et d'utiliser celle qui est compréhensive pour votre administration, à condition de ne pas modifier le numéro des lignes et des lettres qui sont entre les deux points. Cet exemple de fichier de configuration est strictement basé à la configuration du système de gestion BombaDB et non pour la traduction de vos syntaxes procédurales et sécuritaires.
+Comme vous pouvez le voir, depuis la ligne :-1, BombaDB utilise le répertoire /usr/db/bombadb/ afin de detecter le chemin par défaut d'ou toutes les données vont etre enregistrer. Vous êtes libre de changer le répertoire des données, de modifier la langue par défaut et d'utiliser celle qui est compréhensive pour votre administration, à condition de ne pas modifier le numéro des lignes et des lettres qui sont entre les deux points. Cet exemple de fichier de configuration est strictement basé à la configuration du système de gestion BombaDB et non pour la traduction de vos syntaxes procédurales et sécuritaires.
 
 Pour la meilleure compréhension de ces caractères (balises) entre les deux points :
+
  Les caractères numériques qui sont entre les deux points comme par exemple :0: définis le numéro de ligne sur lequel BombaDB détectera la ligne du message à retourner par l’action effectuée, en cas d’échec ou du succès ;
+
  Les textes qui sont entre :B1: et se termine par :A2: sont définis pour le renvoi des messages d’erreurs utilisant la couleur rouge depuis l’environnement console (SHELL) ;
+
  Et les textes qui débutent avec la balise :A1: et se termine par :A2: affiche effectivement le message du succès en vert ;
+
  La balise :E1:, :E2: ou :E3: définis l’emplacement sur lequel le nom ou syntaxes d’échec ou du succès serait placer pour la meilleure compréhension de la réponse de retour après l’action ;
+
  Et pour clôturer, la balise :EE: définie le saut de ligne à chaque fin du message renvoyer au SHELL ou via le poste client.
 
 Par exemple, modifions la ligne :69: en français pour l’anglais :
+     Français	             Anglais
+:69:HEURE et DATE	    :69:TIME and DATE
+
+On voie clairement que le numéro de la ligne reste le 69 entre les deux points, contrairement nous avons pu traduire l’HEURE et la DATE. Passons maintenant à la configuration et définition de nos propres syntaxes (procédures) à exécuter depuis l’environnement d’exécution universelle (URE) pour mieux gérer les données en toute sécurité.
+
+Comme nous l’avions précisé, BombaDB utilise le langage procédural universel (PL/URE) et c’est-ce qui fait qu’il soit un langage de programmation fréquentiel. C’est-à-dire, dans chaque syntaxe (procédure) vous devez respecter l’ordre de fréquence des attributs définies après le signe égal (=) ou entre parenthèse (). Avant de comprendre comment les procédures qu’utilise BombaDB pour la traduction des syntaxes universelles fonctionnent, passons premièrement à la création de notre fichier des syntaxes qui sera utilisé pour les requêtes et la sécurité des informations relative aux données protégées.
+
+Vous devez savoir qu’après l’installation de l’environnement d’exécution universelle (EEU ou URE en anglais), un répertoire /usr/share/ure/int/ était créé automatiquement. C’est par ce répertoire que nous allons placer notre fichier des syntaxes pour qu’il comprenne la langue sur laquelle nous allons procéder pour la gestion de nos informations personnelles. Dans ce cas, vous avez le choix d’utiliser une langue existante pour vos requêtes ou d’en créer votre propre langue pour la meilleure sécurité de vos informations.
+
+Créons maintenant notre fichier des syntaxes à utiliser avec BombaDB et qui sera compréhensif au langage PL/URE :
+Sous LINUX, placez-vous dans n'importe quel répertoire dans votre disque dur et tapez la commande :
+```shell
+sudo nano mes_syntaxes.txt
+```
+En utilisant CYGWIN ou MSYS sous (WINDOWS), tapez la commande :
+```shell
+nano mes_syntaxes.txt
+```
+Sous MACOS, tapez la commande :
+```shell
+nano mes_syntaxes.txt
+```
+Comme exemple, nous allons inserer deux lignes des syntaxes dans le fichier mes_syntaxes.txt afin de vous clarifier un peu les fonctionnements du langage procédural PL/URE :
+Syntaxes francophones :
+```shell
+quitter (bomba_exit);
+
+calculer ?+? (bomba_math);
+```
