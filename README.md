@@ -944,9 +944,61 @@ dans la base des données=`?`
 (bomba_time);
 ```
 
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+afficher heure actuelle(`h:m:s`)
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+afficher heure actuelle();
+```
+
+Vous pouvez aussi définir le format h:m:s comme suite :
+```shell
+afficher heure actuelle(`h:m:s`);
+```
+
+# 15. AFFICHAGE DE LA DATE ACTUELLE :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+afficher la date actuelle()
+
+(bomba_date);
 
 
 
+afficher la date actuelle()
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_date);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+afficher la date actuelle(`jj/mm/yyyy`)
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
 
 
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Connecteur.png)
