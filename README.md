@@ -312,8 +312,9 @@ Par la suite, copier le fichier des syntaxes au répertoire /usr/share/ure/int/ 
 cp -r ./mes_syntaxes.txt /usr/share/ure/int/
 ```
 On voie clairement que nous avons pu définir l’extension .ure pour notre fichier de syntaxes sécurisé et accessible qu’a nous seul. Essayons maintenant nos syntaxes afin de savoir qu’elles fonctionnent correctement :
-```ure
+```php
 :s:mes_syntaxes.ure;
 calculer 2+3;
 quitter;
 ```
+A la première ligne de commande depuis le SHELL URE, nous avons pu préciser à l’environnement d’exécution universelle de lire rien que notre fichier des syntaxes et par la suite on exécute nos commandes de teste aisément qui nous renvoi les résultats 
