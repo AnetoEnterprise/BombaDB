@@ -92,3 +92,43 @@ cd SETUP/
 ```
 
 Nous venons d'installé l'environnement d'exécution universelle (URE) y compris ces composants. Maintenant passons à l'installation de notre système de gestion de base des données BombaDB.
+
+# INSTALLATION
+Ce guide d'installation du dit système de gestion de base des données requiert un environnement LINUX, MAC OS ou WINDOWS depuis l’interface SHELL. Alors vous avez le choix d’installation parmi les différentes plateformes proposées et d’en choisir celle qui vous convienne la plus facile. Assurez-vous que votre connexion internet marche successivement afin de procéder à l’installation. Et dans cet exemple nous allons procéder à l’installation de la version classique. Vous pouvez changer la version d’édition selon vos besoins.
+
+Sous LINUX, placez-vous sur le SHELL et tapez les commandes :
+
+```shell
+sudo wget https://download.bombadb.tech/LINUX/BombaDB-classic-1.0-0.x86_64.tar.xz
+
+tar -xvf BombaDB-classic-1.0-0.x86_64.tar.xz
+
+cd BOMBADB/
+
+./install.sh
+
+```
+
+Sous WINDOWS depuis la console CYGWIN, tapez les commandes :
+```shell
+wget https://download.bombadb.tech/CYGWIN/BombaDB-classic-1.0-0.x86_64.tar.xz
+
+tar -xvf BombaDB-classic-1.0-0.x86_64.tar.xz
+
+cd BOMBADB/
+
+./install.sh
+
+```
+Et sur MACOS, tapez les commandes :
+```shell
+wget https://download.bombadb.tech/MACOS/BombaDB-classic-1.0-0.x86_64.tar.xz
+
+tar -xvf BombaDB-classic-1.0-0.x86_64.tar.xz
+
+cd BOMBADB/
+
+./install.sh
+
+```
+Comme vous pouvez le voir, l’installation du système de gestion de base des données (BombaDB) est si simple que ça en a l’air. Passons maintenant à la configuration de notre système téléchargé et installé afin de structurer et faire en sorte qu’il reconnaisse nos nouvelles langues pour l’exécution des taches avenir sécurisées
