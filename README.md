@@ -850,6 +850,102 @@ utiliser le mot de passe=`12345`
 dans la base des données=`testdb`;
 ```
 
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+modifier dans la table=`test_table`
+
+mettre à jour=`POSTNOM:Toto,PRENOM:Jeremie`
+
+d'ou=`NOM:Aneto`;
+```
+
+Dans cet exemple, mettons à jour 2 ou 3 informations portant le meme POSTNOM toto et exécuter cette procédure afin de mettre à jour toutes les informations dans la colonne POSTNOM qui débutent par To comme suivante :
+```shell
+modifier dans la table=`test_table`
+
+mettre à jour=`POSTNOM:Mimi`
+
+d'ou=`POSTNOM:To%`;
+```
+
+Vous verrez que tous les attributs POSTNOM portants comme valeur qui se débute par To, ses changeront à Mimi.
+
+13. SUPPRESSION DES INFORMATIONS INSERÉES :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+supprimer dans la table=`?`
+
+d'ou=`?`
+
+(bomba_delete_users);
+
+
+
+supprimer dans la table=`?`
+
+d'ou=`?`
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_delete_users);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+supprimer dans la table=`test_table`
+
+d'ou=`ID:1`
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+supprimer dans la table=`test_table`
+
+d'ou=`ID:1`;
+```
+
+Passons à la suppression des informations qui débutent par Mi :
+```shell
+supprimer dans la table=`test_table`
+
+d'ou=`POSTNOM:Mi%`;
+```
+Une fois l’action effectuée, toutes les informations portants les valeurs qui ses débutent par Mi seront disparues.
+
+# 14. AFFICHAGE DE L'HEURE ACTUELLE :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+afficher heure actuelle()
+
+(bomba_time);
+
+
+
+afficher heure actuelle()
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_time);
+```
+
+
+
 
 
 
