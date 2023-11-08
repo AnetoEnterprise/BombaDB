@@ -1,0 +1,259 @@
+##----------------------------Début quitter le système----------------------------##
+quitter (bomba_exit);
+##----------------------------Fin quitter le système------------------------------##
+
+
+##----------------------------Début afficher un message----------------------------##
+afficher ? (bomba_print);
+afficher `?` (bomba_print);
+afficher '?' (bomba_print);
+afficher "?" (bomba_print);
+##----------------------------Fin afficher un message----------------------------##
+
+
+
+
+##----------------------------Début calcul math----------------------------##
+calculer ?+? (bomba_math);
+calculer (?+?)+? (bomba_math);
+calculer (?+?)+(?+?) (bomba_math);
+calculer (?+?)+(?+?)+? (bomba_math);
+
+calculer ?-? (bomba_math);
+calculer (?-?)-? (bomba_math);
+calculer (?-?)-(?-?) (bomba_math);
+calculer (?-?)-(?-?)-? (bomba_math);
+
+calculer ?*? (bomba_math);
+calculer (?*?)*? (bomba_math);
+calculer (?*?)*(?*?) (bomba_math);
+calculer (?*?)*(?*?)*? (bomba_math);
+
+calculer ?/? (bomba_math);
+calculer (?/?)/? (bomba_math);
+calculer (?/?)/(?/?) (bomba_math);
+calculer (?/?)/(?/?)/? (bomba_math);
+
+calculer `?`+`?` (bomba_math);
+
+calculer '?'+'?' (bomba_math);
+
+calculer "?"+"?" (bomba_math);
+##----------------------------Fin calcul math----------------------------##
+
+
+
+
+##----------------------------Début création base des données----------------------------##
+créer base des données=`?` utilisateur=`?` mot de passe=`?` type des données=`?` (bomba_createdb);
+créer base des données='?' utilisateur='?' mot de passe='?' type des données='?' (bomba_createdb);
+créer base des données="?" utilisateur="?" mot de passe="?" type des données="?" (bomba_createdb);
+##----------------------------Fin création base des données----------------------------##
+
+
+
+##-----------------------Début ajout d'utilisateur dans la base des données----------------------------##
+ajout utilisateur=`?` mot de passe=`?` comme syntaxes=`?` utilisateur existant=`?` mot de passe existant=`?` dans la base des données=`?` (bomba_add_userdb);
+ajout utilisateur='?' mot de passe='?' comme syntaxes='?' utilisateur existant='?' mot de passe existant='?' dans la base des données='?' (bomba_add_userdb);
+ajout utilisateur="?" mot de passe="?" comme syntaxes="?" utilisateur existant="?" mot de passe existant="?" dans la base des données="?" (bomba_add_userdb);
+##-----------------------Fin ajout d'utilisateur dans la base des données----------------------------##
+
+
+
+##-----------------------Début lister les utilisateurs dans la base des données---------------------##
+lister les utilisateurs=`?` utilisateur existant=`?` mot de passe existant=`?` dans la base des données=`?` (bomba_list_userdb);
+lister les utilisateurs='?' utilisateur existant='?' mot de passe existant='?' dans la base des données='?' (bomba_list_userdb);
+lister les utilisateurs="?" utilisateur existant="?" mot de passe existant="?" dans la base des données="?" (bomba_list_userdb);
+##-----------------------Fin lister les utilisateurs dans la base des données-----------------------##
+
+
+
+
+##-----------------Début modification d'utilisateur dans la base des données-------------------##
+mise à jour du mot de passe=`?` dans la base des données=`?` mot de passe existant=`?` (bomba_modify_userdb);
+mise à jour du mot de passe='?' dans la base des données='?' mot de passe existant='?' (bomba_modify_userdb);
+mise à jour du mot de passe="?" dans la base des données="?" mot de passe existant="?" (bomba_modify_userdb);
+
+mise à jour le type des données=`?` dans la base des données=`?` mot de passe existant=`?` (bomba_modify_userdb);
+mise à jour le type des données='?' dans la base des données='?' mot de passe existant='?' (bomba_modify_userdb);
+mise à jour le type des données="?" dans la base des données="?" mot de passe existant="?" (bomba_modify_userdb);
+##-----------------Fin modification d'utilisateur dans la base des données-------------------##
+
+
+
+
+##----------------------------Début suppression de la base des données----------------------------##
+supprimer la base de données=`?` utiliser le mot de passe=`?` (bomba_deletedb);
+supprimer la base de données='?' utiliser le mot de passe='?' (bomba_deletedb);
+supprimer la base de données="?" utiliser le mot de passe="?" (bomba_deletedb);
+##----------------------------Fin suppression de la base des données------------------------------##
+
+
+
+
+##----------------------------Début listage base des données----------------------------##
+lister les bases des données (bomba_listdb);
+lister les bases des données et connecter depuis l'utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_listdb);
+lister les bases des données et connecter depuis l'utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_listdb);
+lister les bases des données et connecter depuis l'utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_listdb);
+##----------------------------Fin listage base des données------------------------------##
+
+
+
+
+##----------------------------Début création de la table----------------------------##
+créer la table=`?` colones=`?` (bomba_createtb);
+créer la table='?' colones='?' (bomba_createtb);
+créer la table="?" colones="?" (bomba_createtb);
+
+créer la table=`?` colones=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_createtb);
+créer la table='?' colones='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_createtb);
+créer la table="?" colones="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_createtb);
+##----------------------------Fin création de la table------------------------------##
+
+
+
+##----------------------------Début modification de la table----------------------------##
+mise à jour de la table=`?` colones=`?` (bomba_modifytb);
+mise à jour de la table='?' colones='?' (bomba_modifytb);
+mise à jour de la table="?" colones="?" (bomba_modifytb);
+
+mise à jour de la table=`?` colones=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_modifytb);
+mise à jour de la table='?' colones='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_modifytb);
+mise à jour de la table="?" colones="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_modifytb);
+##----------------------------Fin modification de la table------------------------------##
+
+
+
+##----------------------------Début suppréssion de la table----------------------------##
+supprimer la table=`?` (bomba_deletetb);
+supprimer la table='?' (bomba_deletetb);
+supprimer la table="?" (bomba_deletetb);
+
+supprimer la table=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_deletetb);
+supprimer la table='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_deletetb);
+supprimer la table="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_deletetb);
+##----------------------------Fin suppréssion de la table------------------------------##
+
+
+
+
+##----------------------------Début insertion dans la table----------------------------##
+inserer dans la table=`?` colonnes=`?` (bomba_insert);
+inserer dans la table='?' colonnes='?' (bomba_insert);
+inserer dans la table="?" colonnes="?" (bomba_insert);
+
+inserer dans la table=`?` colonnes=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_insert);
+inserer dans la table='?' colonnes='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_insert);
+inserer dans la table="?" colonnes="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_insert);
+##----------------------------Fin insertion dans la table------------------------------##
+
+
+
+
+##----------------------------Début selection des données dans la table----------------------------##
+selectionner dans la table=`?` colonnes=`?` d'ou=`?` (bomba_select);
+selectionner dans la table='?' colonnes='?' d'ou='?' (bomba_select);
+selectionner dans la table="?" colonnes=`?` d'ou="?" (bomba_select);
+
+selectionner dans la table=`?` colonnes=`?` d'ou=`?` ordre croissant=`?` (bomba_select);
+selectionner dans la table='?' colonnes='?' d'ou='?' ordre croissant='?' (bomba_select);
+selectionner dans la table="?" colonnes=`?` d'ou="?" ordre croissant="?" (bomba_select);
+
+selectionner dans la table=`?` colonnes=`?` d'ou=`?` limite=`?` (bomba_select);
+selectionner dans la table='?' colonnes='?' d'ou='?' limite='?' (bomba_select);
+selectionner dans la table="?" colonnes=`?` d'ou="?" limite="?" (bomba_select);
+
+selectionner dans la table=`?` colonnes=`?` d'ou=`?` limite=`?` ordre croissant=`?` (bomba_select);
+selectionner dans la table='?' colonnes='?' d'ou='?' limite='?' ordre croissant='?' (bomba_select);
+selectionner dans la table="?" colonnes=`?` d'ou="?" limite="?" ordre croissant="?" (bomba_select);
+
+selectionner dans la table=`?` colonnes=`?` d'ou=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_select);
+selectionner dans la table='?' colonnes='?' d'ou='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_select);
+selectionner dans la table="?" colonnes="?" d'ou="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_select);
+
+selectionner dans la table=`?` colonnes=`?` d'ou=`?` ordre croissant=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_select);
+selectionner dans la table='?' colonnes='?' d'ou='?' ordre croissant='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_select);
+selectionner dans la table="?" colonnes="?" d'ou="?" ordre croissant="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_select);
+
+selectionner dans la table=`?` colonnes=`?` d'ou=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` limite=`?` (bomba_select);
+selectionner dans la table='?' colonnes='?' d'ou='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' limite='?' (bomba_select);
+selectionner dans la table="?" colonnes="?" d'ou="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" limite="?" (bomba_select);
+
+selectionner dans la table=`?` colonnes=`?` d'ou=`?` ordre croissant=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` limite=`?` (bomba_select);
+selectionner dans la table='?' colonnes='?' d'ou='?' ordre croissant='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' limite='?' (bomba_select);
+selectionner dans la table="?" colonnes="?" d'ou="?" ordre croissant="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" limite="?" (bomba_select);
+
+##----------------------------Fin selection des données dans la table------------------------------##
+
+
+
+
+
+##----------------------------Début mise à jour des informations----------------------------##
+modifier dans la table=`?` mettre à jour=`?` d'ou=`?` (bomba_update_data);
+modifier dans la table='?' mettre à jour='?' d'ou='?' (bomba_update_data);
+modifier dans la table="?" mettre à jour="?" d'ou="?" (bomba_update_data);
+
+modifier dans la table=`?` mettre à jour=`?` d'ou=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_update_data);
+modifier dans la table='?' mettre à jour='?' d'ou='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_update_data);
+modifier dans la table="?" mettre à jour="?" d'ou="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_update_data);
+##----------------------------Fin mise à jour des informations------------------------------##
+
+
+
+
+
+
+##----------------------------Début suppression des informations----------------------------##
+supprimer dans la table=`?` d'ou=`?` (bomba_delete_users);
+supprimer dans la table='?' d'ou='?' (bomba_delete_users);
+supprimer dans la table="?" d'ou="?" (bomba_delete_users);
+
+supprimer dans la table=`?` d'ou=`?` utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_delete_users);
+supprimer dans la table='?' d'ou='?' utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_delete_users);
+supprimer dans la table="?" d'ou="?" utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_delete_users);
+##----------------------------Fin suppression des informations------------------------------##
+
+
+
+##----------------------------Début affichage de l'heure actuelle----------------------------##
+afficher heure actuelle() (bomba_time);
+afficher heure actuelle(`?`) (bomba_time);
+afficher heure actuelle('?') (bomba_time);
+afficher heure actuelle("?") (bomba_time);
+
+afficher heure actuelle() utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_time);
+afficher heure actuelle(`?`) utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_time);
+afficher heure actuelle('?') utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_time);
+afficher heure actuelle("?") utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_time);
+##----------------------------Fin affichage de l'heure actuelle------------------------------##
+
+
+
+##----------------------------Début affichage de la date actuelle----------------------------##
+afficher la date actuelle() (bomba_date);
+afficher la date actuelle(`?`) (bomba_date);
+afficher la date actuelle('?') (bomba_date);
+afficher la date actuelle("?") (bomba_date);
+
+afficher la date actuelle() utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_date);
+afficher la date actuelle(`?`) utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_date);
+afficher la date actuelle('?') utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_date);
+afficher la date actuelle("?") utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_date);
+##----------------------------Fin affichage de la date actuelle------------------------------##
+
+
+
+##--------------------------Début affichage de l'heure et la date actuelle--------------------------##
+maintenant() (bomba_now);
+maintenant(`?`) (bomba_now);
+maintenant('?') (bomba_now);
+maintenant("?") (bomba_now);
+
+maintenant() utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_now);
+maintenant(`?`) utilisateur=`?` utiliser le mot de passe=`?` dans la base des données=`?` (bomba_now);
+maintenant('?') utilisateur='?' utiliser le mot de passe='?' dans la base des données='?' (bomba_now);
+maintenant("?") utilisateur="?" utiliser le mot de passe="?" dans la base des données="?" (bomba_now);
+##--------------------------Fin affichage de l'heure et la date actuelle----------------------------##
+
