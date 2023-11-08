@@ -275,3 +275,34 @@ quitter (bomba_exit);
 
 calculer ?+? (bomba_math);
 ```
+Syntaxes anglophones :
+```shell
+exit (bomba_exit);
+
+sum ?+? (bomba_math);
+```
+Syntaxes lingalaphones :
+```shell
+bima (bomba_exit);
+
+pesa réponse ya ?+? (bomba_math);
+```
+Pourquoi nous n’avons pas pu modifier ou traduire les syntaxes qui sont entre parenthèse dans notre fichier de syntaxes ?
+Parce que c’est sont des bibliothèques BombaDB que nous avons utilisée ou appelée afin d’exécuter nos syntaxes facilement dans n’importe quelle langue.
+
+NB : Nous avons le choix de définir une ou plusieurs langues dans le même fichier des syntaxes à utiliser. Ça dépend des administrateurs sur lesquels vont gérer vos données. Si vous êtes le seul administrateur qu’utilisera l’unique accès, par exemple l’utilisateur : root et le mot de passe : 12345, il est conseillé de définir qu’une seule langue pour vous-même. Au cas contraire, si le même accès serait utilisable à plusieurs personnes (administrateurs), dans ce cas vous avez le choix de définir plusieurs langues pour chaque administrateur. Cette méthode est déconseillée si chaque administrateur utilise son propre accès pour la gestion des informations.
+
+Maintenant il est temps de copier et coller notre fichier des syntaxes dans le répertoire /usr/share/ure/int/ pour que l’environnement d’exécution universelle les comprennent facilement et d’exécuter les taches voulues :
+
+```shell
+cp -r ./mes_syntaxes.txt /usr/share/ure/int/
+```
+Attention, si vous voulez que personne d'autre ne comprenne vos syntaxes des gestions, vous devez premièrement sécuriser votre fichier avant qu'il soit copier dans le répertoire /usr/share/ure/int/ comme suite :
+Depuis la console, lancer l'environnement d'exécution universelle (EEU) comme suite :
+```shell
+ure
+```
+Exécuter la commande suivante :
+```shell
+ure -e "mes_syntaxes.txt" ".ure"
+```
