@@ -542,6 +542,50 @@ dans la base des données=`?`
 (bomba_listdb);
 ```
 
+Pourquoi dans la première ligne de syntaxe insérée n’a pas surement les accès pour se connecter à la base des données ?
+
+Notre première ligne de syntaxe définie le type de procédure qui sera exécuté directement depuis le SHELL BombaDB utilisant la technologie client-serveur parce que depuis son interface, les accès sont définis qu’une seule fois. Tandis que la seconde ligne de syntaxe définie comme toujours le type de procédure qui s’exécute uniquement en utilisant l’environnement d’exécution universelle. A noter que pour la sécurité des informations relatives aux données, BombaDB privilégie certaines procédures afin qu’elles s’exécutent uniquement depuis l’interface SHELL URE pour l’assurance des données et non en utilisant le SHELL BombaDB d’un poste client. Vous pouvez avoir plus d’informations concernant BombaDB SHELL dans la rubrique Guide des connecteurs.
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+lister les bases des données
+
+et connecter depuis l'utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+lister les bases des données;
+```
+
+Toutes les deux procédures testées depuis le SHEL URE ou BombaDB ont les mêmes resultat que de lister les bases des données crées dans votre disque dur.
+
+# 7. CRÉATION DE LA TABLE :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt afin d'ajouter ou créer la nouvelle table test_table :
+```shell
+créer la table=`?` colones=`?` (bomba_createtb);
+
+
+
+créer la table=`?`
+
+colones=`?`
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_createtb);
+```
+
 
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Connecteur.png)
 # CONNECTEUR
