@@ -16,3 +16,25 @@ En parlant de URE, BombaDB peut donc être utilisé depuis la console par défau
 Avant de procéder à l'installation et configuration de BombaDB, vous devez tout d'abord installer l'environnement d'exécution universel (EEU ou URE) en utilisant la commande :
 Sous LINUX, tapez la commande :
 
+```shell
+sudo wget https://sourceforge.net/projects/ure/files/1.2/ConsoleLinux/ure-1.2.tar.xz
+
+tar -xvf ure-1.2.tar.xz
+
+cd ./SETUP/
+
+./install.sh
+
+rm -r ../SETUP
+
+
+
+sudo wget https://sourceforge.net/projects/ure/files/1.2/AllModulesLangs/LINUX/URE-Libs-Langs-1.0-0.x86_64.tar.xz
+
+tar -xvf URE-Libs-Langs-1.0-0.x86_64.tar.xz
+
+cd SETUP/
+
+./install.sh
+
+```
