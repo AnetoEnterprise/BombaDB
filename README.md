@@ -322,3 +322,93 @@ quitter;
 A la première ligne de commande depuis le SHELL URE, nous avons pu préciser à l’environnement d’exécution universelle de lire rien que notre fichier des syntaxes et par la suite on exécute nos commandes de teste aisément qui nous renvoi les résultats 
 
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Calcul_Classique.png)
+
+Le resultat de la commande (calculer 2+3) affirme que BombaDB renvoi ces resultat au format JSON afin qu’ils soient manipulables dans n’importe quel système informatique. Nous venons de voir comment installer et configurer l’environnement d’exécution universelle y compris BombaDB. Maintenant il est temps de savoir le reste des syntaxes avancer dans la rubrique MANUEL DE REFERENCE ci-après :
+
+![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Manuel.png)
+# MANUEL DE RÉFERENCE
+Maintenant que tous fonctionnent correctement, nous allons passer à la compréhension et traduction de langage procédural PL/URE afin de bien gérer les informations. Comme nous l’avions précisé depuis la page d’installation, le langage URE ou environnement d’exécution universelle est fréquentiel. Il suffit de tous traduire comme bon vous semble à condition de respecter la position active de chaque attribut définie.
+
+# IMPORTANT :
+Vous n’êtes pas obliger de définir toutes les syntaxes que nous allons expliquer sur cette page dans votre fichier des syntaxes. Vous êtes libre de choisir quelques syntaxes utiles de votre base des données afin que toute autre action inutile ne s’exécute pas. Parce que si la syntaxe définie ou l’action effectuée ne se retrouve pas dans le fichier des syntaxes (votre fichier des syntaxes), même si un hackeur ou qui que ce soit l’exécute, l’environnement d’exécution universelle (EEU ou URE) n’exécutera aucune action. C’est-ce qui fait que BombaDB soit le système de gestion de base des données le plus sécurisé tant qu’il exécute uniquement les syntaxes qu’on lui ordonne par le propriétaire de la base des données lui-même.
+
+
+En parlant de la sécurité, BombaDB occupe 3 facteurs des sécurités :
+
+ Le facteur premier : Est celui de l’accès à la base des données ;
+
+ Le facteur secondaire : Planché par la vérification correcte des syntaxes ;
+
+ Le troisième ou dernier facteur : Vérifie si l’utilisateur connecté à l’autorisation d’exécuter ou pas la procédure en cours et en attente de ses résultats.
+
+Passons maintenant aux choses sérieuses :
+Premièrement nous allons définir dans notre fichier des syntaxes la procédure sur laquelle nous permettra de créer une ou plusieurs bases des données en cas utile. Comme nous avons déjà notre fichier mes_syntaxes.txt, ajoutons-le la ligne des syntaxes suivante :
+
+1. CRÉATION DE LA BASE DES DONNÉES :
+Syntaxes francophones :
+```shell
+créer base des données=`?`
+
+utilisateur=`?`
+
+mot de passe=`?`
+
+type des données=`?`
+
+(bomba_createdb);
+```
+Syntaxes angloophones :
+```shell
+create database=`?`
+
+user=`?`
+
+password=`?`
+
+data type=`?`
+
+(bomba_createdb);
+```
+Syntaxes lingalaphones :
+```shell
+sala ébombelo=`?`
+
+mosaleli=`?`
+
+liloba yako kota=`?`
+
+modelo ya makambo=`?`
+
+(bomba_createdb);
+```
+Un peu d’explication pour notre langage procédural fréquentiel (PL/URE) :
+L’environnement d’exécution universelle détecte automatiquement les valeurs qui sont après les attributs égal =, l’entre parenthèse () ou entre les accolades {}. Comme vous venez de le voir, nous avons uniquement traduit nos syntaxes françaises aux syntaxes anglaises et sans oublié en lingala (La langue la plus répandue et utilisée en République Démocratique du Congo). Mais nos symboles égaux (=) restent dans leurs positions exactes afin de définir leurs fréquences par l’environnement d’exécution universelle.
+
+Pour les points d’interrogations (`?`) qui sont entre des petits guillemets, ceux-là définissent que les valeurs sur lesquelles les administrateurs vont saisir dans les attributs de leurs langues traduites tout en respectant leurs fréquences, doivent être utilisées en tant que valeurs valides. Meme si vous avez bouleversé vos syntaxes, l’environnement d’exécution universelle détectera les attributs par l’ordre automatique fréquentiel que le nom de la base des données soit sur le premier attribut, son utilisateur sur la seconde position fréquentielle et ainsi de suite.
+
+A noter que BombaDB utilise deux types des données pour l’édition classique :
+
+ Le 0 : Définit le type de base des données qu’utilise qu’un seul fichier pour stocker toutes les informations personnelles dans ledit fichier (Portable) ;
+NB : Ce type de base des données est limité à un faible volume des données.
+
+ Le 1 : Celui-ci définit le type des données indépendantes qui peuvent être stockées dans plusieurs fichiers indépendamment (Non portable).
+NB : Il est capable de gérer des myriades des données en meme temps.
+
+Enregistrer les modifications apportées à notre fichier mes_syntaxes.txt, sécurisez-le en utilisant la méthode de conversion URE que nous avons pu procéder à la page de configuration BombaDB et par la suite copiez-le dans le répertoire /usr/share/ure/int/. Alors, vous êtes libre de tester votre nouvelle ligne des syntaxes afin de créer votre nouvelle base des données en exécutant la commande suivante depuis le SHEL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+créer base des données=`testdb`
+
+utilisateur=`root`
+
+mot de passe=`12345`
+
+type des données=`0`;
+
+
+```
+
+![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Connecteur.png)
+# CONNECTEUR
+Guide rélatif aux connecteurs pour l'utilisation de BombaDB à d'autres langage de programmation.
