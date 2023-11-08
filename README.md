@@ -1140,4 +1140,46 @@ return EXIT_SUCCESS;
 }
 ```
 
+Intégrer BombaDB en utilisant JAVA :
+```java
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Date;
+import java.io.*;
+import java.util.*;
 
+public class javabdblocal {
+
+public static void main(String[] args) {
+try{
+System.loadLibrary("java-bdb-local"); // loads java-bdb-local.so
+} catch (UnsatisfiedLinkError e) {
+System.out.println("Impossible de lire la bibliothèque.\n" + e);
+System.exit(1);
+}
+
+
+javabdblocal bombaDBModule=new javabdblocal();
+String resultat=bombaDBModule.Exec("calculer 2+2;", "*.*");
+System.out.println("" + resultat);
+}
+
+
+public native String Exec(String commande, String syntaxes);
+}
+```
+
+Intégrer BombaDB en utilisant NodeJS :
+```js
+const bombaDBModule = require('nodejs-bdb-local');
+console.log('', bombaDBModule.Exec("calculer 2+2;", "*.*"));
+console.log();
+```
+Intégrer BombaDB en utilisant PHP :
+Premièrement vous devez l'activer depuis votre fichier php.ini comme suite :
+```php
+nano /etc/php/7.2/cli/php.ini
+extension=php_bdblocal.so
+```
