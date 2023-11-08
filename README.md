@@ -586,6 +586,166 @@ dans la base des données=`?`
 (bomba_createtb);
 ```
 
+Avant de convertir et d’exécuter nos deux procédures ajoutées dans le fichier des syntaxes, nous devons premièrement comprendre chaque paramètre défini dans chaque colonne de la nouvelle table test_table. Voici une liste exhaustive des paramètres à adapter aux attributions de vos nouvelles tables :
+
+ A() : Ce paramètre est utilisé afin d’incrémenter automatiquement les identifiants de chaque information insérée dans la table. Par défaut, utilise le nombre illimité de génération des identifiants automatiques. Et vous pouvez limiter le nombre d’identifiant en utilisant par exemple : ID:A(20) Ce qui veut dire, nous avons adapté à l’attribut ID (Identifiant) de limité la génération d’identifiant une fois que le nombre des chiffres générés sont strictement arrivés à 20 caractères (53647283645372837263).
+
+ C() : Celui-ci est quasiment utiliser pour l’insertion de courte information. Comme le premier paramètre, vous avez le choix de spécifier le nombre limite des caractères à insérer.
+
+ N() : Comme sa lettre l’indique, le N signifie le nombre. Il est souvent utilisé pour les attributs basés sur l’insertion de caractères numériques. Et par défaut, utilise comme nombre illimité des valeurs à insérer. Vous pouvez définir le nombre limite des caractères à insérer comme bon vous semble.
+
+ L () : Signifie long en français, permet l’insertion des plusieurs caractères simultanément. Utiliser pour l’insertion de message ou commentaire d’une information. Ce paramètre n’as pas d’option supplémentaire comme d’autres.
+
+ D() : Définie la date en cours. Elle peut être modifiée selon le format de votre choix. Par défaut utilise le format (dd/mm/yyyy) ou (jj/mm/yyyy), vous pouvez définir d’autres format tels que : (yyyy/mm/dd) ou (dd/mm).
+
+ T() : Le paramètre T() définie le TEMPS, souvent utilisé pour l’affichage ou l’insertion de l’heure dans la base des données. Utilise comme options supplémentaires H : Pour l’heure en cours, M : Pour la minute et S : ou I : Pour la seconde. On aura comme paramètre (h:m:s) ou (h:m:i). Ou encore (h:m).
+
+ P() : Utiliser uniquement pour l’insertion des informations chiffrées (cryptées). Souvent utiliser pour le chiffrement de mot de passe.
+
+ F() : Pour finaliser, le paramètre du fichier permet à la base des données d’être compatible à intégrer d’autres fichiers binaires dans la base des données qu’ils soient portable avec d’autres informations insérées dans la base des données.
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+créer la table=`test_table` colones=`ID:a(),NOM:c(10),POSTNOM:c(10),PRENOM:c(10),TEL:n(12),DETAILS:l(),DATE:d(dd/mm/yyyy),HEURE:t(h:m:i),MOTDEPASSE:p(),FICHIER:f()`
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante :
+```shell
+créer la table=`test_table` colones=`ID:a(),NOM:c(10),POSTNOM:c(10),PRENOM:c(10),TEL:n(12),DETAILS:l(),DATE:d(),HEURE:t(),MOTDEPASSE:p(),FICHIER:f()`;
+```
+
+Comme toujours, toutes les deux procédures qu'elles soient testées depuis le SHEL URE ou BombaDB ont les mêmes resultat.
+
+# 8. MODIFICATION DE LA TABLE :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt qui nous permettront de modifier les colonnes de la table elle-même :
+```shell
+mise à jour de la table=`?`
+
+colones=`?`
+
+(bomba_modifytb);
+
+
+
+mise à jour de la table=`?`
+
+colones=`?` utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_modifytb);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+mise à jour de la table=`test_table`
+
+colones=`ID:A(20)`
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante afin de mettre à jour la colonne ID :
+```shell
+mise à jour de la table=`test_table`
+
+colones=`ID:A(20)`;
+```
+
+On voie belle et bien que la colonne ID qu’utilisée comme paramètre A(), mise à jour par A(20). Vous avez le choix de mettre à jour une ou plusieurs colonnes en meme temps, en utilisant un séparateur virgule(s). Comme par exemple ID:A(20),NOM:C(4)
+
+# 9. SUPPRESSION DE LA TABLE EXISTANTE DANS LA BASE DES DONNÉES :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+supprimer la table=`?`
+
+(bomba_deletetb);
+
+
+
+supprimer la table=`?`
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_deletetb);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+supprimer la table=`test_table`
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
+Pour les administrateurs qu'utilisent le SHELL BombaDB, exécuter la procédure suivante afin de mettre à jour la colonne ID :
+```shell
+supprimer la table=`test_table`;
+```
+
+# 10. INSERTION DANS LA TABLE :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+inserer dans la table=`?`
+
+colonnes=`?`
+
+(bomba_insert);
+
+
+
+inserer dans la table=`?`
+
+colonnes=`?`
+
+utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_insert);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante depuis le SHELL URE :
+```shell
+:s:mes_syntaxes.ure;
+
+inserer dans la table=`test_table`
+
+colonnes=`ID:1,NOM:Aneto,POSTNOM:Minanga,PRENOM:Guyllit,TEL:0842666616,DETAILS:Test d'insertion.,DATE:19/09/2022,HEURE:10:41,MOTDEPASSE:monApplication.exe>0000,FICHIER:monfichier.txt`
+
+utilisateur=`root`
+
+utiliser le mot de passe=`12345`
+
+dans la base des données=`testdb`;
+```
+
 
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Connecteur.png)
 # CONNECTEUR
