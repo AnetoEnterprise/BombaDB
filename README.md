@@ -484,6 +484,65 @@ mot de passe existant=`12345`
 dans la base des données=`testdb`;
 ```
 
+# 4. MISE À JOUR DES INFORMATIONS UTILISATEUR DANS LA BASE DES DONNÉES :
+Ajoutons la ligne suivante dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+mise à jour du mot de passe=`?`
+
+dans la base des données=`?`
+
+mot de passe existant=`?`
+
+(bomba_modify_userdb);
+```
+
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante :
+```shell
+:s:mes_syntaxes.ure;
+
+mise à jour du mot de passe=`1234`
+
+dans la base des données=`testdb`
+
+mot de passe existant=`12345`;
+```
+
+# 5. SUPPRESSION DE LA BASE DES DONNÉES :
+Ajoutons la ligne suivante dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+supprimer la base de données=`?`
+
+utiliser le mot de passe=`?`
+
+(bomba_deletedb);
+```
+Enregistrez, Convertissez et copiez-le dans le répertoire /usr/share/ure/int/ par la suite exécuter la procédure suivante :
+```shell
+:s:mes_syntaxes.ure;
+
+supprimer la base de données=`testdb`
+
+utiliser le mot de passe=`1234`;
+```
+# 6. LISTAGE DES BASES DES DONNÉES :
+Ajoutons les lignes suivantes dans notre fichier des syntaxes mes_syntaxes.txt :
+```shell
+lister les bases des données
+
+(bomba_listdb);
+
+
+
+lister les bases des données et connecter depuis l'utilisateur=`?`
+
+utiliser le mot de passe=`?`
+
+dans la base des données=`?`
+
+(bomba_listdb);
+```
+
+
 ![alt text](https://github.com/AnetoEnterprise/BombaDB/blob/main/images/Connecteur.png)
 # CONNECTEUR
 Guide rélatif aux connecteurs pour l'utilisation de BombaDB à d'autres langage de programmation.
